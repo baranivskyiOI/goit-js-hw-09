@@ -3,7 +3,7 @@ const formData = {
     message: "",
 };
 
-const form = document.querySelector(".contact-form");
+const form = document.querySelector(".feedback-form");
 const dataKey = "FORM_DATA" 
 
 try {
