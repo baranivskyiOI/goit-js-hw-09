@@ -8,9 +8,9 @@ const dataKey = "FORM_DATA"
 
 try {
 
-    const saveData = JSON.parse( localStorage.getItem(dataKey)) || {};
+    const saveData = JSON.parse(localStorage.getItem(dataKey)) || {};
 
-    let { email: localEmail, message: localMessage } = saveData;
+    let { email: localEmail = "", message: localMessage = "" } = saveData;
     
     form.elements.email.value = localEmail;
     form.elements.message.value = localMessage;
