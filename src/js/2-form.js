@@ -8,7 +8,9 @@ const dataKey = "FORM_DATA"
 
 try {
 
-    let {email: localEmail, message: localMessage} = JSON.parse(localStorage.getItem(dataKey));
+    const saveData = JSON.parse( localStorage.getItem(dataKey)) || {};
+
+    let { email: localEmail, message: localMessage } = saveData;
     
     form.elements.email.value = localEmail;
     form.elements.message.value = localMessage;
@@ -35,6 +37,18 @@ form.addEventListener("input", (e) => {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    if (form.elements.email.value === "" && form.elements.message.value === "") {
+        alert("Please fill in all fields");
+        return;
+    }
+
+    console.log(formData);
+    
+    let {email, message} = formData;
+    
+    email = "";
+    message = ""; 
 
     localStorage.removeItem(dataKey);
 
