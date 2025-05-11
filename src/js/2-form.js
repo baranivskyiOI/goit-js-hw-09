@@ -12,6 +12,9 @@ try {
     
     form.elements.email.value = localEmail;
     form.elements.message.value = localMessage;
+
+    formData.email = localEmail;
+    formData.message = localMessage;
     
 } catch (error) {
     console.log(error);
